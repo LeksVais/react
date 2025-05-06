@@ -1,0 +1,439 @@
+:root {
+    --bg-color: #4171ca;
+    --text-color: #333;
+    --header-bg: #1924c244;
+    --header-text: #fff;
+    --card-bg: #abaaca;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --accent-color: #8b0000;
+    --hover-color: #a52a2a;
+    --footer-bg: #2564d8e5;
+    --footer-text: #fff;
+    --table-border: #ddd;
+  }
+  
+  .dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-bg: #18135f;
+    --header-text: #f0f0f0;
+    --card-bg: #2a2a2a;
+    --card-shadow: rgba(9, 34, 88, 0.856);
+    --accent-color: #c04040;
+    --hover-color: #d06060;
+    --footer-bg: #18135f;
+    --footer-text: #f0f0f0;
+    --table-border: #444;
+    
+    /* Дополнительные элементы, которые могли быть пропущены */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Явно задаём цвета для элементов, которые не используют переменные */
+  .dark-theme .profession,
+  .dark-theme .description,
+  .dark-theme .character-info h2,
+  .dark-theme .stats-table th,
+  .dark-theme .stats-table td,
+  .dark-theme .skill-card h3,
+  .dark-theme .skill-card p,
+  .dark-theme .quote {
+    color: var(--text-color);
+  }
+  
+  .dark-theme .skill {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  
+  .dark-theme .skill:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .dark-theme .pi-horizontal-group-item {
+    border-color: var(--table-border);
+  }
+  
+  .dark-theme .skill-card {
+    background-color: var(--card-bg);
+    border-color: var(--table-border);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .profession {
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+  }
+  
+  main {
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .character-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    padding: 2rem; 
+    transform: scale(1.05); 
+    margin: 2rem auto; 
+    max-width: 95%; 
+    transition: transform 0.3s ease; 
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .character-card {
+        flex-direction: row;
+        max-width: 100%; 
+    }
+  }
+  
+  .wrapper {
+    width: 100px;
+    height: 800px;
+    border: 5px solid #18135f
+  }
+  
+  .character-image {
+    flex: 1;
+    min-height: 350px; 
+    background-image: url('/public/IMG/КЛБМерсоРодословная_Клинка1Арт.webp');
+    background-repeat: no-repeat;
+    background-position: -280px;
+    background-size: cover;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  
+  .character-image:hover {
+    transform: scale(1.02);
+  }
+  
+  .character-info {
+    flex: 2;
+  }
+  
+  h2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  .description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .skill {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  
+  .skill:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+  }
+  
+  footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    margin-top: 2rem;
+  }
+  .footer {
+    background-color: #343434;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .footer h4 {
+    color: #ccc;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-bottom: 1px solid  #666;
+    padding-bottom: 3px;
+  }
+  
+  .footer a {
+    text-decoration: none;
+    transition: all .3s;
+  }
+  
+  
+  .footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .footer a, footer li {
+    color: #c8c8c8;
+  }
+  
+  .footer li a {
+    display: block;
+  }
+  
+  .footer-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  
+  .theme-toggle:hover {
+    background-color: var(--hover-color);
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  .weapon {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(139, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  
+  .weapon:hover {
+    background-color: rgba(139, 0, 0, 0.2);
+  }
+  
+  .weapon-icon {
+    font-size: 2rem;
+  }
+  
+  .weapon-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+  }
+  
+  .stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .stats-table th, .stats-table td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid var(--table-border);
+  }
+  
+  .stats-table th {
+    background-color: rgba(139, 0, 0, 0.2);
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+  
+  .stats-table tr:hover {
+    background-color: rgba(139, 0, 0, 0.05);
+  }
+  
+  .stats-table img {
+    vertical-align: middle;
+  }
+  
+  .pi-horizontal-group-item {
+    padding: 8px;
+    border: 1px solid var(--table-border);
+  }
+  
+  .pi-data-label {
+    font-weight: bold;
+    background-color: rgba(139, 0, 0, 0.1);
+  }
+  
+  .pi-data-value {
+    text-align: center;
+  }
+  
+  .rarity-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .rarity-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .skills-section {
+    margin-top: 2rem;
+  }
+  
+  .skills-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .skill-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--table-border);
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1;
+    min-width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--card-shadow);
+  }
+  
+  .skill-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-details {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--table-border);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .skill-toggle {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  .skill-toggle:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .stat-value, .resistance-value {
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+  }
+  
+  .stat-value:hover, .resistance-value:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+  }
