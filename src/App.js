@@ -23,7 +23,6 @@ function App() {
     localStorage.setItem('theme', newTheme ? 'dark' : 'light');
   };
 
-  // Переключение деталей навыка
   const toggleSkill = (skillId) => {
     setExpandedSkills(prev => ({
       ...prev,
